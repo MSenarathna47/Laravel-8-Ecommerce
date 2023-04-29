@@ -23,6 +23,15 @@
 		<a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
 		<a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
 	</div>
+	
+	<x-jet-validation-errors class="mb-4" />
+
+	@if (session('status'))
+		<div class="mb-4 font-medium text-sm text-green-600">
+			{{ session('status') }}
+		</div>
+	@endif
+			
     <form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
         @csrf
 		<div class="form-group">
@@ -62,7 +71,7 @@
 		@csrf
 		<div class="form-group">
 		    <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
-		    <input id="name" type="text" name="name" class="form-control unicase-form-control text-input"  >
+		    <input id="name" type="text" name="name" required= "" class="form-control unicase-form-control text-input"  >
 		</div>
 
 		@error('name')
