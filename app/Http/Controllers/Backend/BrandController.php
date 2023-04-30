@@ -10,6 +10,7 @@ use Image;
 
 
 
+
 use Symfony\Contracts\Service\Attribute\SubscribedService;
 
 class BrandController extends Controller
@@ -17,9 +18,8 @@ class BrandController extends Controller
     public function BrandView()
     {
          $brands = Brand::latest()->get();
-        //  dd($brands);
          return view('backend.brand.brand_view' , compact('brands'));
-    }
+    }//end methode
 
     public function BrandStore(Request $request)
     {
@@ -35,7 +35,6 @@ class BrandController extends Controller
         ]);
 
         
-
         $image = $request->file('brand_image');
         $name_gen = hexdec(uniqid()).".".$image->getClientOriginalExtension();
         Image::make($image)->resize(300,200)->save('upload/brand/'.$name_gen); //resize image using laravel intervation libray
@@ -47,24 +46,12 @@ class BrandController extends Controller
             'brand_image' => $save_url,
         ]);
 
-        
         $notification =  array (
-
             'message' => 'Brand Insert Successfully',
             'alert-type' => 'success'
         );
-
         return redirect()->back()->with($notification);
-
-
-
-
-
-    }
-
-
-
-
+    }//end methode
 
 
     public function BrandEdit($id)
@@ -73,7 +60,7 @@ class BrandController extends Controller
         return view('backend.brand.brand_edit' , compact('brand'));
 
 
-    }
+    }//end methode
 
 
     public function BrandUpdate(Request $request)
@@ -98,13 +85,13 @@ class BrandController extends Controller
             ]);
 
                 
-                $notification =  array (
+            $notification =  array (
 
-                    'message' => 'Brand Updated Successfully',
-                    'alert-type' => 'info'
-                );
+                'message' => 'Brand Updated Successfully',
+                'alert-type' => 'info'
+            );
 
-                return redirect()->route('all.brand')->with($notification);
+            return redirect()->route('all.brand')->with($notification);
 
         }else{
             
@@ -114,15 +101,15 @@ class BrandController extends Controller
             ]);
 
                 
-                $notification =  array (
+            $notification =  array (
 
-                    'message' => 'Brand Updated Successfully',
-                    'alert-type' => 'info'
-                );
+                'message' => 'Brand Updated Successfully',
+                'alert-type' => 'info'
+            );
 
-                return redirect()->route('all.brand')->with($notification);
+            return redirect()->route('all.brand')->with($notification);
         }
-    }
+    }//end methode
 
     public function BrandDelete($id)
     {
@@ -141,4 +128,5 @@ class BrandController extends Controller
         return redirect()->back()->with($notification);
 
     } //end methode
+
 }
