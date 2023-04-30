@@ -64,6 +64,7 @@ class AdminProfileController extends Controller
             $admin->password = Hash::make($request->password);
             $admin->save();
             Auth::logout();
+            
             return redirect()->route('admin.logout');
         }
         else{

@@ -15,22 +15,17 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-{{-- 
-                <li>
-                    <a href="calendar.html" class=" waves-effect">
-                        <i class="ri-calendar-2-line"></i>
-                        <span>Calendar</span>
-                    </a>
-                </li>
+
+               
     
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-mail-send-line"></i>
-                        <span>Email</span>
+                        <span>Brands</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="email-inbox.html">Inbox</a></li>
-                        <li><a href="email-read.html">Read Email</a></li>
+                        <li><a href="{{route('all.brand')}}">All Brand</a></li>
+                        {{-- <li><a href="email-read.html">Read Email</a></li> --}}
                     </ul>
                 </li>
 
@@ -63,9 +58,9 @@
                             </ul>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
 
-                {{-- <li class="menu-title">Pages</li>
+                <li class="menu-title">Pages</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -93,7 +88,7 @@
                         <li><a href="pages-404.html">Error 404</a></li>
                         <li><a href="pages-500.html">Error 500</a></li>
                     </ul>
-                </li> --}}
+                </li>
            </ul>
         </div>
         <!-- Sidebar -->

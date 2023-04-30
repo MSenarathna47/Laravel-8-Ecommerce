@@ -17,8 +17,6 @@
                     <form action="{{ route('update.change.password') }}" method="post" >
                     @csrf
 
-
-
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Current Password</label>
                         <div class="col-sm-10">
@@ -26,25 +24,19 @@
                         </div>
                     </div>
                     <!-- end row -->
-
-
                     <div class="row mb-3">
                         <label for="example-search-input" class="col-sm-2 col-form-label">New Password</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="password"  id="password" name="password" >
                         </div>
                     </div>
-
-
                     <div class="row mb-3">
                         <label for="example-search-input" class="col-sm-2 col-form-label"> Confirm Password</label>
                         <div class="col-sm-10">
                             <input class="form-control" id="password_confirmation" type="password" name="password_confirmation" >
                         </div>
                     </div>
-                   
-
-
+                
                     <input type="submit" class="btn btn-primary waves-effect waves-light" value="Update Profile">
                    
 
