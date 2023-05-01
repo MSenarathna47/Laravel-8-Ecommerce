@@ -27,6 +27,8 @@
         <!-- App Css-->
         <link href="{{ asset('backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
+        <link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap-tagsinput.css')}}">
+
         
 
 
@@ -87,6 +89,15 @@
         <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
         <script src="{{ asset('backend/assets/js/pages/dashboard.init.js') }}"></script>
+
+        {{-- ck editor --}}
+        <script src="{{asset('backend/assets/vendor_components/ckeditor/ckeditor.js')}}"></script>
+        <script src="{{asset('backend/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js')}}"></script>
+        <script src="{{asset('backend/assets/js/pages/editor.js')}}"></script>
+
+
+        {{-- //input tags --}}
+            <script src="{{ asset('backend/assets/js/bootstrap-tagsinput.min.js')}}"></script>
 
         <!-- Datatable init js -->
         <script src="{{ asset('backend/assets/js/pages/datatables.init.js')}}"></script>

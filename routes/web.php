@@ -102,9 +102,12 @@ Route::prefix('Category')->group(function(){
 
 Route::prefix('Product')->group(function(){
 
+    
     // Category All Routes
 
     Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
+
+
 
 });
 

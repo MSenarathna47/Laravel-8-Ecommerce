@@ -22,30 +22,16 @@
                             <label for="example-text-input" >SubCategory Name</label>
                             <div class="col-sm-10">
                                 <select class="form-select" name="category_id" required="">
-
-
-                    <option selected="" disabled="" value="">Select Category</option>
-                        @foreach ($categories as $category )
-
-
-                        <option value="{{$category->id}}" {{$category->id == $subcategory->category_id ? 'selected' : ''}}  >{{$category->category_name}}</option>
-                        @endforeach
-                                    
+                                <option selected="" disabled="" value="">Select Category</option>
+                                    @foreach ($categories as $category )
+                                    <option value="{{$category->id}}" {{$category->id == $subcategory->category_id ? 'selected' : ''}}  >{{$category->category_name}}</option>
+                                    @endforeach     
                                 </select>
                                 @error('category_id')
                                 <span class="text-danger">{{$message}}</span>
                                  @enderror
-
-
-
-
-                                {{-- <div class="invalid-feedback">
-                                    Please select a valid state.
-                                </div> --}}
                             </div>
-
                         </div>
-
                     </div>   
                     
                     
