@@ -60,7 +60,7 @@
                         <div class="mb-3">
                             <label for="example-text-input" > Category Select</label>
                             <div class="col-sm-10">
-                                <select class="form-select" name="category_id" required="">
+                                <select class="form-select" name="category_id" id="category_id" required="">
                                     <option selected="" disabled="" value="">Select Category</option>
                                     @foreach ($categories as $category )
                                     <option value="{{$category->id}}">{{$category->category_name}}</option>
@@ -79,7 +79,7 @@
                         <div class="mb-3">
                             <label for="example-text-input" > SubCategory Select</label>
                             <div class="col-sm-10">
-                                <select class="form-select" name="subcategory_id" required="">
+                                <select class="form-select" name="subcategory_id" id="" required="">
                                     <option selected="" disabled="" value="">Select Sub Category</option>
                                                                  
                                 </select>
@@ -129,26 +129,27 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('select[name="category_id"]').on('change' , function( {
-                    var category_id = $(this).val();
-                    if(category_id) {
-                        $.ajax({
-                            url: "{{ url('/category/subcategory/ajax')}}/" + category_id,
-                            type:"GET",
-                            dataType:"json",
-                            success:function(data) {
-                                var d = $('select[name="subcategory_id"]').empty();
-                                $.each(data,function(key, value){
-                                    $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name +'</option>');
+              $('select[name="category_id"]').on('change', function(){
+                  var category_id = $(this).val();
+                  if(category_id) {
+                      $.ajax({
+                          url: "{{  url('/Category/subcategory/ajax') }}/"+category_id,
+                          type:"GET",
+                          dataType:"json",
+                          success:function(data) {
+                             var d =$('select[name="subcategory_id"]').empty();
+                                $.each(data, function(key, value){
+                                    $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name + '</option>');
                                 });
-                            },
-                        });
-                    }else{
-                        alert('danger');
-                    }
-                }));
-            });
-        </script>
+                          },
+                      });
+                  } else {
+                      alert('danger');
+                  }
+              });
+          });
+          </script>
+      
 
 
 @endsection

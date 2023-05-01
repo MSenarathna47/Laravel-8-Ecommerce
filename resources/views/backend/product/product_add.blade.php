@@ -1,5 +1,8 @@
 @extends('admin.admin_master')
 @section('admin')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <div class="page-content">
     <div class="container-fluid">   
 <div class="row">
@@ -60,7 +63,7 @@
                                 <div class="mb-3">
                                     <label for="example-text-input" >SubCategory Select</label>
                                     <div class="col-sm-10">
-                                        <select class="form-select" name="category_id" required="">
+                                        <select class="form-select" name="subcategory_id" required="">
                                         <option selected="" disabled="" value="">Select SubCategory</option>
                                           
                                         </select>
@@ -311,5 +314,58 @@
 </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('select[name="category_id"]').on('change', function(){
+          var category_id = $(this).val();
+          if(category_id) {
+              $.ajax({
+                  url: "{{  url('/Category/subcategory/ajax') }}/"+category_id,
+                  type:"GET",
+                  dataType:"json",
+                  success:function(data) {
+                    $('select[name="subsubcategory_id"]').html('');
+                     var d =$('select[name="subcategory_id"]').empty();
+                        $.each(data, function(key, value){
+                            $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name + '</option>');
+                        });
+                  },
+              });
+          } else {
+              alert('danger');
+          }
+      });
+
+
+
+
+      $('select[name="subcategory_id"]').on('change', function(){
+          var subcategory_id = $(this).val();
+          if(subcategory_id) {
+              $.ajax({
+                  url: "{{  url('/Category/subsubcategory/ajax') }}/"+subcategory_id,
+                  type:"GET",
+                  dataType:"json",
+                  success:function(data) {
+                     var d =$('select[name="subsubcategory_id"]').empty();
+                        $.each(data, function(key, value){
+                            $('select[name="subsubcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name + '</option>');
+                        });
+                  },
+              });
+          } else {
+              alert('danger');
+          }
+      });
+
+
+
+
+
+
+
+
+  });
+  </script>
 
 @endsection
