@@ -37,7 +37,17 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('all.category')}}">All Category</a></li>
                         <li><a href="{{route('all.subcategory')}}">All SubCategory</a></li>
-
+                        <li><a href="{{route('all.subsubcategory')}}">Sub SubCategory</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Product</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('add-product')}}">Add Product</a></li>
+                        <li><a href="{{route('all.subcategory')}}">Manage Product</a></li>                     
                     </ul>
                 </li>
 

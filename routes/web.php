@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Models\User;
@@ -23,6 +24,13 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
+
+
+
+
+
+
+
 
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 	Route::get('/login', [AdminController::class, 'loginForm']);
@@ -50,11 +58,13 @@ Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpd
 // Admin All Brands Routes
 
 Route::prefix('brand')->group(function(){
-Route::get('/view', [BrandController::class, 'BrandView'])->name('all.brand');
-Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
-Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
-Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
-Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+
+    Route::get('/view', [BrandController::class, 'BrandView'])->name('all.brand');
+    Route::post('/store', [BrandController::class, 'BrandStore'])->name('brand.store');
+    Route::get('/edit/{id}', [BrandController::class, 'BrandEdit'])->name('brand.edit');
+    Route::post('/update', [BrandController::class, 'BrandUpdate'])->name('brand.update');
+    Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand.delete');
+
 });
 
 
@@ -62,24 +72,50 @@ Route::get('/delete/{id}', [BrandController::class, 'BrandDelete'])->name('brand
 
 Route::prefix('Category')->group(function(){
 
+    // Category All Routes
+
     Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.category');
     Route::post('/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
     Route::get('/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit');
     Route::post('/update', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
     Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
 
-    // Admin Sub Category All Routes
+    //  Sub Category All Routes
 
     Route::get('/sub/view', [SubCategoryController::class, 'SubCategoryView'])->name('all.subcategory');
     Route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->name('subcategory.store');
     Route::get('/sub//edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])->name('subcategory.edit');
+    Route::post('/sub/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
+    Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
 
+    //  Sub Sub Category All Routes
 
-    Route::post('/update', [SubCategoryController::class, 'subCategoryUpdate'])->name('category.update');
-    Route::get('/delete/{id}', [SubCategoryController::class, 'CategoryDelete'])->name('category.delete');
-
+    Route::get('/sub/sub/view', [SubCategoryController::class, 'SubSubCategoryView'])->name('all.subsubcategory');
+    Route::get('/subcategory/ajax/{categoty_id}', [SubCategoryController::class, 'GetSubCategory']);
+    Route::post('/sub/sub/store', [SubCategoryController::class, 'SubSubCategoryStore'])->name('subsubcategory.store');
+    Route::get('/sub/sub//edit/{id}', [SubCategoryController::class, 'SubSubCategoryEdit'])->name('subsubcategory.edit');
+    Route::post('/sub/sub/update', [SubCategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
+    Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategoryDelete'])->name('subsubcategory.delete');
 });
     
+
+
+Route::prefix('Product')->group(function(){
+
+    // Category All Routes
+
+    Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
+
+});
+
+
+
+
+
+
+
+
+
 
 
 

@@ -50,12 +50,11 @@ class CategoryController extends Controller
 
     public function CategoryUpdate(Request $request)
     {
-        $category_id = $request->id;
-
-        
+        $category_id = $request->id;   
+          
         Category::findOrFail($category_id)->update([
             'category_name'=> $request->category_name,
-            'category_slug'=>strtolower(str_replace(' ' , '-' , $request->category_slug )),
+            'category_slug'=>strtolower(str_replace(' ' , '-' , $request->category_name )),
             'category_icon'=> $request->category_icon,
         ]);
 
@@ -72,13 +71,9 @@ class CategoryController extends Controller
     }//end method
 
     public function CategoryDelete($id)
-    {
-        // $category = Category::findOrFail($id);
-       
+    {      
         Category::findOrFail($id)->delete();
-
         $notification =  array (
-
             'message' => 'Category Delected Successfully',
             'alert-type' => 'info'
         );

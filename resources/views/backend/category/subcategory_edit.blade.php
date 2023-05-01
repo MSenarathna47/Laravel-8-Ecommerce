@@ -12,19 +12,24 @@
 
                 <h2 class="card m-3">Add SubCategory</h2>
                
-                <form action="{{ route('subcategory.store') }}" method="post" >
+                <form action="{{ route('subcategory.update') }}" method="post" >
                     @csrf
+
+                    <input type="hidden" name="id" value="{{$subcategory->id}}">
 
                     <div class="form-group">
                         <div class="mb-3">
                             <label for="example-text-input" >SubCategory Name</label>
                             <div class="col-sm-10">
                                 <select class="form-select" name="category_id" required="">
-                                    <option selected="" disabled="" value="">Select Category</option>
-                                    @foreach ($categories as $category )
 
-                                    <option value="{{$category->id}}" {{$category->id == $subcategory->catrgory_id ? 'selected' : ''}}>{{$category->category_name}}</option>
-                                    @endforeach
+
+                    <option selected="" disabled="" value="">Select Category</option>
+                        @foreach ($categories as $category )
+
+
+                        <option value="{{$category->id}}" {{$category->id == $subcategory->category_id ? 'selected' : ''}}  >{{$category->category_name}}</option>
+                        @endforeach
                                     
                                 </select>
                                 @error('category_id')

@@ -24,11 +24,11 @@
                                     <tbody>
                                         @foreach ($subcategory as $item )
                                         <tr>
-                                            <td>{{$item->category_id}}</td>     
+                                            <td>{{$item['category'] ['category_name']}}</td>     
                                             <td>{{$item->subcategory_name}}</td>                           
                                             <td>
                                                 <a href="{{route('subcategory.edit',$item->id)}}" class="btn btn-info" >Edit</a>
-                                                <a href="{{route('category.delete',$item->id)}}" class="btn btn-danger" id="delete">Delete</a> 
+                                                <a href="{{route('subcategory.delete',$item->id)}}" class="btn btn-danger" id="delete">Delete</a> 
                                             </td>                                                                               
                                         </tr> 
                                         @endforeach                                                                  
@@ -55,7 +55,7 @@
 
                     <div class="form-group">
                         <div class="mb-3">
-                            <label for="example-text-input" >SubCategory Name</label>
+                            <label for="example-text-input" >Category Name</label>
                             <div class="col-sm-10">
                                 <select class="form-select" name="category_id" required="">
                                     <option selected="" disabled="" value="">Select Category</option>
