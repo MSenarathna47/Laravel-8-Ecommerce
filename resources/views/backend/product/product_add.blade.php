@@ -1,29 +1,22 @@
 @extends('admin.admin_master')
 @section('admin')
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <div class="page-content">
     <div class="container-fluid">   
-<div class="row">
-    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                         <h4 class="card-title">Validation type</h4>
+                         <br>
+                         <form class="custom-validation" action="#" method="">
 
-
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Validation type</h4>
-                <p class="card-title-desc">Parsley is a javascript form validation
-                    library. It helps you provide your users with feedback on their form
-                    submission before sending it to your server.</p>
-
-                <form class="custom-validation" action="#" method="">
-
-                    <div class="row"> <!-- 1st row start-->
-                        <div class="col-md 4">
-                            <div class="form-group">
-                                <div class="mb-3">
+                            <div class="row">
+                                <div class="col-md 6">
                                     <label for="example-text-input" >Brand Select</label>
                                     <div class="col-sm-10">
+
                                         <select class="form-select" name="brand_id" required="">
                                         <option selected="" disabled="" value="">Select Brand</option>
                                             @foreach ($brands  as $brand )
@@ -32,18 +25,14 @@
                                         </select>
                                         @error('brand_id')
                                         <span class="text-danger">{{$message}}</span>
-                                         @enderror
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
+                                        @enderror
 
-
-                        <div class="col-md 4">
-                            <div class="form-group">
-                                <div class="mb-3">
-                                    <label for="example-text-input" > Category Select</label>
+                                    </div>  <!--col-sm-10 end --> 
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6">
+                                    <label for="example-text-input">Category Select</label>
                                     <div class="col-sm-10">
+
                                         <select class="form-select" name="category_id" required="">
                                         <option selected="" disabled="" value="">Select Category</option>
                                             @foreach ($categories as $category )
@@ -53,14 +42,14 @@
                                         @error('category_id')
                                         <span class="text-danger">{{$message}}</span>
                                          @enderror
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
 
-                        <div class="col-md 4">
-                            <div class="form-group">
-                                <div class="mb-3">
+                                    </div> <!--col-sm-10 end --> 
+                                </div> <!--col-md 6 end-->
+
+                            </div> <!--row end -->
+
+                            <div class="row">
+                                <div class="col-md 6 mt-4">
                                     <label for="example-text-input" >SubCategory Select</label>
                                     <div class="col-sm-10">
                                         <select class="form-select" name="subcategory_id" required="">
@@ -70,16 +59,9 @@
                                         @error('category_id')
                                         <span class="text-danger">{{$message}}</span>
                                          @enderror
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                    </div><!-- 1st row end-->
-
-                    <div class="row"> <!-- 2nd row start-->
-                        <div class="col-md 4">
-                            <div class="form-group">
-                                <div class="mb-3">
+                                    </div> 
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6 mt-4">
                                     <label for="example-text-input" >Sub SubCategory Select</label>
                                     <div class="col-sm-10">
                                         <select class="form-select" name="subsubcategory_id" required="">
@@ -90,40 +72,20 @@
                                         <span class="text-danger">{{$message}}</span>
                                          @enderror
                                     </div>
-                                </div>
-                            </div>  
-                        </div>
+                                </div> <!--col-md 6 end-->
+                            </div> <!--row end -->
 
-
-                        <div class="col-md 4">
-                            <div class="mb-3">
-                                
-                                <label>E-Mail</label>
-                                <div class="col-sm-10">
-                                    <input type="email" name="email" id="email" class="form-control" required="" >
-                                </div>
-                                @error('email')
-                                <span class="text-danger">{{$message}}</span>
-                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md 4">
-                            <div class="mb-3">
-                                <label>Product Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" required="" name="product_name" id="">
-                                </div>
-                                @error('product_name')
-                                <span class="text-danger">{{$message}}</span>
-                                 @enderror
-                            </div>
-                        </div>
-                    </div><!-- 2nd row end-->
-
-                    <div class="row"> <!-- 3rd row start-->
-                        <div class="col-md 4">
-                                <div class="mb-3">
+                            <div class="row">
+                                <div class="col-md 6 mt-4">
+                                    <label>Product Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required="" name="product_name" id="">
+                                    </div>
+                                    @error('product_name')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6  mt-4">
                                     <label>Product Code</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" required="" name="product_code" id="">
@@ -131,145 +93,123 @@
                                     @error('product_code')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
-                                </div>
-                        </div>
+                                </div> <!--col-md 6 end-->
+                            </div> <!--row end -->
 
-
-                        <div class="col-md 4">
-                            <div class="mb-3">
-                                <label>Product Quantity</label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="product_qty" id="product_qty" class="form-control" required="" >
-                                </div>
-                                @error('product_qty')
-                                <span class="text-danger">{{$message}}</span>
-                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md 4">
-                            <div class="mb-3">
-                                <label>Product Tags</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="product_tags" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" style="display: none;">
-                                </div>
-                                @error('product_tags')
-                                <span class="text-danger">{{$message}}</span>
-                                 @enderror
-                            </div>
-                        </div>
-                    </div><!-- 3rd row end-->
-
-                    <div class="row"> <!-- 4rd row start-->
-                        <div class="col-md 4">
-                            <div class="mb-3">
-                                <label>Product Size</label>
-                                <div  class="col-sm-10">
-                                    <input type="text" class="form-control" name="product_size" value="43l" data-role="tagsinput" placeholder="add size" style="display: none;">
-                                </div>
-                                @error('product_size')
-                                <span class="text-danger">{{$message}}</span>
-                                 @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="col-md 4">
-                            <div class="mb-3">
-                                <label>Product Tags</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="product_color" value="blue" data-role="tagsinput" placeholder="add color" style="display: none;">
-                                </div>
-                                @error('product_color')
-                                <span class="text-danger">{{$message}}</span>
-                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="col-md 4">
-                            <label>Product Selling Price</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" required="" name="selling_price" id="selling_price">
-                            </div>
-                            @error('selling_price')
-                            <span class="text-danger">{{$message}}</span>
-                             @enderror
-                        </div>
-                    </div><!-- 4th row end-->
-
-                    <div class="row">
-                        <div class="col-md 4">
-                            <label>Product Discount Price</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" required="" name="discount_price" id="selling_price">
-                            </div>
-                            @error('discount_price')
-                            <span class="text-danger">{{$message}}</span>
-                             @enderror
-                        </div>
-                        <div class="col-md 4">
-                            <label>Product Thambnail</label>
-                            <div class="col-sm-10">
-                                <input type="file" class="form-control" required="" name="product_thambnail" id="product_thambnail">
-                            </div>
-                            @error('product_thambnail')
-                            <span class="text-danger">{{$message}}</span>
-                             @enderror
-                        </div>
-                        <div class="col-md 4">
-                            <label>Multiple Image</label>
-                            <div class="col-sm-10">
-                                <input type="file" class="form-control" required="" name="multi_img[]" id="product_thambnail">
-                            </div>
-                            @error('multi_img')
-                            <span class="text-danger">{{$message}}</span>
-                             @enderror
-                        </div>
-                    </div>
-
-
-                     {{-- start 5th row --}}
-                    <div class="row"> 
-                        <div class="col-md 12">
-                            <div class="mb-3 mt-3">
-                                <label>Short Description</label>
-                                <div>
-                                    <textarea required="" name="short_descp" class="form-control" rows="5"></textarea>
-                                    @error('short_descp')
+                            <div class="row">
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Quantity</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="product_qty" id="product_qty" class="form-control" required="" >
+                                    </div>
+                                    @error('product_qty')
                                     <span class="text-danger">{{$message}}</span>
                                      @enderror
-                                </div>
-                            </div>
-                        </div>                      
-                    </div>
-                     {{-- end 5th row --}}
-
-
-                    <div class="row">
-                        <div class="col-md 12">
-                            <div class="mb-3 mt-3">
-                                <label>Long Description</label>
-                                <div>
-                                   
-                                    <textarea id="editor1" name="long_descp" rows="10" cols="80">
-                                    </textarea>
-
-                                    @error('long_descp')
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Tags</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="product_tags" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" style="display: none;">
+                                    </div>
+                                    @error('product_tags')
                                     <span class="text-danger">{{$message}}</span>
                                      @enderror
-                                </div>
-                            </div>
-                        </div>                    
-                    </div>
+                                </div> <!--col-md 6 end-->
+                            </div> <!--row end -->
 
-       <hr>
-                
-                 
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-md-6">
-								<div class="form-group">
-									<div class="controls">
+                            <div class="row">
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Size</label>
+                                    <div  class="col-sm-10">
+                                        <input type="text" class="form-control" name="product_size" value="43l" data-role="tagsinput" placeholder="add size" style="display: none;">
+                                    </div>
+                                    @error('product_size')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Tags</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="product_color" value="blue" data-role="tagsinput" placeholder="add color" style="display: none;">
+                                    </div>
+                                    @error('product_color')
+                                    <span class="text-danger">{{$message}}</span>
+                                     @enderror
+                                </div> <!--col-md 6 end-->
+                            </div> <!--row end -->
+
+                            
+                            <div class="row">
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Selling Price</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required="" name="selling_price" id="selling_price">
+                                    </div>
+                                    @error('selling_price')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Discount Price</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" required="" name="discount_price" id="selling_price">
+                                    </div>
+                                    @error('discount_price')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div> <!--col-md 6 end-->
+                            </div> <!--row end -->
+
+                            
+                            <div class="row">
+                                <div class="col-md 6  mt-4">
+                                    <label>Product Thambnail</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control" required="" name="product_thambnail" id="product_thambnail">
+                                    </div>
+                                    @error('product_thambnail')
+                                    <span class="text-danger">{{$message}}</span>
+                                     @enderror
+                                </div> <!--col-md 6 end-->
+                                <div class="col-md 6  mt-4">
+                                    <label>Multiple Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control" required="" name="multi_img[]" id="product_thambnail">
+                                    </div>
+                                    @error('multi_img')
+                                    <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div> <!--col-md 6 end-->
+                            </div> <!--row end -->
+
+                            
+                            <div class="row">
+                                <div class="col-md 12  mt-4">
+                                    <label>Short Description</label>
+                                    <div  class="col-sm-11">
+                                        <textarea required="" name="short_descp" class="form-control" rows="2"></textarea>
+                                        @error('short_descp')
+                                        <span class="text-danger">{{$message}}</span>
+                                         @enderror
+                                    </div>
+                                </div> <!--col-md 12 end-->                             
+                            </div> <!--row end -->
+
+                            <div class="row">
+                                <div class="col-md 12  mt-4">
+                                    <label>Long Description</label>
+                                    <div  class="col-sm-11">                                  
+                                        <textarea id="editor1" name="long_descp" rows="10" cols="80"></textarea>
+                                        @error('long_descp')
+                                        <span class="text-danger">{{$message}}</span>
+                                         @enderror
+                                    </div>
+                                </div> <!--col-md 12 end-->                             
+                            </div> <!--row end -->
+                            <hr>
+                            <div class="row">
+                                <div class="col-md 6  mt-4">
+                                    <div class="controls">
 										<fieldset>
 											<input type="checkbox" id="checkbox_2" name="hot_deals" value="1">
 											<label for="checkbox_2">Hot Deals  </label>
@@ -278,12 +218,14 @@
 											<input type="checkbox" id="checkbox_3" name="featured" value="y">
 											<label for="checkbox_3">Featured</label>
 										</fieldset>
-									<div class="help-block"></div></div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">                               
-									<div class="controls">
+									    <div class="help-block">
+                                            
+                                        </div>
+                                    </div>
+                                </div> <!--col-md 6 end-->    
+                                
+                                <div class="col-md 6  mt-4">
+                                    <div class="controls">
 										<fieldset>
 											<input type="checkbox" id="checkbox_3" name="special_offer" value="1">
 											<label for="checkbox_3">Special Offer</label>
@@ -292,30 +234,38 @@
 											<input type="checkbox" id="checkbox_4" name="special_deals" value="1">
 											<label for="checkbox_4">Special Deals</label>
 										</fieldset>
-									<div class="help-block"></div></div>
-								</div>
-							</div>
-						</div>
-                    </div>
-                    <div class="mb-0">
-                        <div>
-                            <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                                Add Product
-                            </button>
-                           
-                        </div>
-                    </div>
-                </form>
+									    <div class="help-block">
+                                        </div>
+                                    </div>
+                                </div> <!--col-md 6 end-->  
+                            </div> <!--row end -->
 
-            </div>
-        </div>
-    </div> <!-- end col -->
+                            <div class="row">
+                                <div class="col-md 5 mt-4">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
+                                        Add Product
+                                    </button>
+                                   
+                                </div>
+                            </div>
 
-</div>
-    </div>
-</div>
+
+                            
+                         </form>                      
+                    </div> <!--card-body end-->
+                </div> <!--card end-->
+            </div> <!-- col-xl-12 end-->
+        </div> <!-- row end-->
+    </div> <!-- container-fluid end-->
+</div> <!--page-content end-->
+<!-- -->
+<!----------------------------------------Ajax for selecion box------------------------------------------->
+
 <script type="text/javascript">
-    $(document).ready(function() {
+  
+// -----------------------------------------Load Sub category---------------------------------------------
+  
+  $(document).ready(function() {
       $('select[name="category_id"]').on('change', function(){
           var category_id = $(this).val();
           if(category_id) {
@@ -337,6 +287,7 @@
       });
 
 
+// -----------------------------------------Load  Sub Sub category---------------------------------------------
 
 
       $('select[name="subcategory_id"]').on('change', function(){
@@ -358,14 +309,7 @@
           }
       });
 
-
-
-
-
-
-
-
   });
-  </script>
+</script>
 
 @endsection
