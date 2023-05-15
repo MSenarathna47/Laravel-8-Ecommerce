@@ -25,7 +25,7 @@ class IndexController extends Controller
     public function UserProfile(){
         $id = Auth::user()->id;
         $user = User::find($id);
-        return view('Frontend.profile.user_profile', compact('user'));
+        return view('frontend.profile.user_profile', compact('user'));
     }
 
     public function UserProfileStore(Request $request)

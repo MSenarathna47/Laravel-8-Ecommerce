@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
 
 
 
@@ -99,17 +99,27 @@ Route::prefix('Category')->group(function(){
     Route::post('/sub/sub/update', [SubCategoryController::class, 'SubSubCategoryUpdate'])->name('subsubcategory.update');
     Route::get('/sub/sub/delete/{id}', [SubCategoryController::class, 'SubSubCategoryDelete'])->name('subsubcategory.delete');
 });
-    
+
 
 
 Route::prefix('Product')->group(function(){
 
-    
+
     // Category All Routes
 
     Route::get('/add', [ProductController::class, 'AddProduct'])->name('add-product');
+    Route::post('/store', [ProductController::class, 'StoreProduct'])->name('product-store');
+    Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage-product');
+    Route::get('/edit/{id}', [ProductController::class, 'EditProduct'])->name('product.edit');
 
-    
+
+
+
+
+
+
+
+
 
 
 

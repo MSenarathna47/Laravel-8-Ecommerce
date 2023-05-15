@@ -8,7 +8,7 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                         <h4 class="card-title">Validation type</h4>
+                         <h4 class="card-title">Edit Product</h4>
                          <br>
                          <form class="custom-validation" action="{{route('product-store')}}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -20,7 +20,8 @@
                                         <select class="form-select" name="brand_id" required="">
                                         <option selected="" disabled="" value="">Select Brand</option>
                                             @foreach ($brands  as $brand )
-                                            <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
+                                            <option value="{{$brand->id}}"
+                                                {{$brand->id ==$products->brand_id ? 'selected': ' '}} >{{$brand->brand_name}}</option>
                                             @endforeach
                                         </select>
                                         @error('brand_id')
@@ -36,7 +37,7 @@
                                         <select class="form-select" name="category_id" required="">
                                         <option selected="" disabled="" value="">Select Category</option>
                                             @foreach ($categories as $category )
-                                            <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                            <option value="{{$category->id}}"  {{$category->id == $products->category_id ? 'selected': ' '}}>{{$category->category_name}}</option>
                                             @endforeach
                                         </select>
                                         @error('category_id')
@@ -54,7 +55,9 @@
                                     <div class="col-sm-10">
                                         <select class="form-select" name="subcategory_id" required="">
                                         <option selected="" disabled="" value="">Select SubCategory</option>
-
+                                        @foreach ($subcategory as $subcategory )
+                                        <option value="{{$subcategory->id}}"  {{$subcategory->id == $products->subcategory_id ? 'selected': ' '}}>{{$subcategory->subcategory_name}}</option>
+                                        @endforeach
                                         </select>
                                         @error('category_id')
                                         <span class="text-danger">{{$message}}</span>
@@ -66,7 +69,9 @@
                                     <div class="col-sm-10">
                                         <select class="form-select" name="subsubcategory_id" required="">
                                         <option selected="" disabled="" value="">Select Sub SubCategory</option>
-
+                                        @foreach ($subsubcategory as $subsub )
+                                        <option value="{{$subsub->id}}"  {{$subsub->id == $products->subsubcategory_id ? 'selected': ' '}}>{{$subsub->subsubcategory_name}}</option>
+                                        @endforeach
                                         </select>
                                         @error('subsubcategory_id')
                                         <span class="text-danger">{{$message}}</span>
@@ -79,7 +84,7 @@
                                 <div class="col-md 6 mt-4">
                                     <label>Product Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required="" name="product_name" id="">
+                                        <input type="text" class="form-control" required="" name="product_name" id="" value="{{$products->product_name}}">
                                     </div>
                                     @error('product_name')
                                     <span class="text-danger">{{$message}}</span>
@@ -88,7 +93,7 @@
                                 <div class="col-md 6  mt-4">
                                     <label>Product Code</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required="" name="product_code" id="">
+                                        <input type="text" class="form-control" required="" name="product_code" id="" value="{{$products->product_code}}>
                                     </div>
                                     @error('product_code')
                                     <span class="text-danger">{{$message}}</span>
@@ -100,7 +105,7 @@
                                 <div class="col-md 6  mt-4">
                                     <label>Product Quantity</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="product_qty"  class="form-control" required="" >
+                                        <input type="text" name="product_qty"  class="form-control" required="" value="{{$products->product_qty}}>
                                     </div>
                                     @error('product_qty')
                                     <span class="text-danger">{{$message}}</span>
