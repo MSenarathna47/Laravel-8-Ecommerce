@@ -50,6 +50,16 @@
                         <li><a href="{{route('manage-product')}}">Manage Product</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Slider</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('manage-slider')}}">Manage Slider</a></li>
+
+                    </ul>
+                </li>
 
                 <li class="menu-title">Pages</li>
 

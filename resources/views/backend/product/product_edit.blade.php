@@ -247,7 +247,92 @@
 
     <section class="content">
         <div class="row">
-mlan
+            <div class="col-lg-12">
+                <div class="card">
+                    <h5 class="card-header">Product Multiple Image <strong>Update</strong></h5>
+                    <div class="card-body">
+                       <form action="{{route('update-product-image')}}" enctype="multipart/form-data" method="post">
+                        @csrf
+                            <div class="row row-sm">
+
+                               @foreach ( $multiImgs as $img)
+                               <div class="col-md-3 m-4">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="{{asset($img->photo_name)}}" class="card-img-top" style="height:130px; width:280px;">
+                                    <div class="card-body">
+                                      <h5 class="card-title">
+                                        <a href="{{route('product-multiimage-delete',$img->id)}}" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
+                                      </h5>
+                                      <p class="card-text">
+                                        <div class="form-group">
+                                            <label for="" class="form-control-lable"> Change Image <span class="tx-danger">*</span></label>
+                                            <input type="file" name="multi_img[{{ $img->id }}]" class="form-control">
+                                        </div>
+                                      </p>
+                                    </div>
+                                  </div>
+                               </div>
+                               @endforeach
+                            </div>
+                            <div class="row">
+                                <div class="col-md 5 mt-2">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
+                                        Update Image
+                                    </button>
+                                </div>
+                            </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {{-- ///////////////// Thumble image  update area ////////////////// --}}
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <h5 class="card-header">Product Thumbnail Image <strong>Update</strong></h5>
+                    <div class="card-body">
+                       <form action="{{route('update-product-thumbnail')}}" enctype="multipart/form-data" method="post">
+                        @csrf
+                            <div class="row row-sm">
+
+                                <input type="hidden" name="id" value="{{ $products->id}}">
+                                <input type="hidden" name="oldimage" value="{{ $products->product_thambnail}}">
+
+
+                               <div class="col-md-3 m-4">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="{{asset($products->product_thambnail)}}" class="card-img-top" style="height:130px; width:280px;">
+                                    <div class="card-body">
+                                      <h5 class="card-title">
+                                        <a href="" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i></a>
+                                      </h5>
+                                      <p class="card-text">
+                                        <div class="form-group">
+                                            <label for="" class="form-control-lable"> Change Image <span class="tx-danger">*</span></label>
+                                            <input type="file" class="form-control" onChange="mainThamUrl(this)" required="" name="product_thambnail" id="product_thambnail">
+                                             <img class="m-2" src="" id="mainThmb">
+
+                                        </div>
+                                      </p>
+                                    </div>
+                                  </div>
+                               </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md 5 mt-2">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
+                                        Update Image
+                                    </button>
+                                </div>
+                            </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

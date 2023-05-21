@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        
+
         <meta charset="utf-8" />
         <title>Dashboard | Upcube - Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
         <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- Responsive datatable examples -->
-        <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />  
+        <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
         <!-- Bootstrap Css -->
         <link href="{{ asset('backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -29,14 +29,14 @@
 
         <link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap-tagsinput.css')}}">
 
-        
+
 
 
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
     </head>
 
     <body data-topbar="dark">
-    
+
 
         <!-- Begin page -->
         <div id="layout-wrapper">
@@ -50,17 +50,17 @@
             <div class="main-content">
 
                 @yield('admin')
-             
-               
+
+
              @include('admin.body.footer')
-                
+
             </div>
             <!-- end main content-->
 
         </div>
         <!-- END layout-wrapper -->
 
-    
+
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
@@ -72,7 +72,7 @@
         <script src="{{ asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/node-waves/waves.min.js') }}"></script>
 
-        
+
         <!-- apexcharts -->
         <script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
@@ -83,7 +83,7 @@
         <!-- Required datatable js -->
         <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-        
+
         <!-- Responsive examples -->
         <script src="{{ asset('backend/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
@@ -104,7 +104,7 @@
 
         <!-- App js -->
         <script src="{{ asset('backend/assets/js/app.js') }}"></script>
-        
+
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -114,7 +114,7 @@
         e.preventDefault();
         var link = $(this).attr("href");
 
-  
+
                   Swal.fire({
                     title: 'Are you sure?',
                     text: "Delete This Data?",
@@ -132,7 +132,7 @@
                         'success'
                       )
                     }
-                  }) 
+                  })
 
 
     });
@@ -140,6 +140,69 @@
   });
 
 </script>
+
+<script>
+    $(function(){
+    $(document).on('click','#Inactive',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+
+
+                  Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Inactive This?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Inactive it!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.href = link
+                      Swal.fire(
+                        'Inactiveted!',
+                        'Inactive.',
+                        'success'
+                      )
+                    }
+                  })
+
+
+    });
+
+    $(document).on('click','#Active',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+
+
+                  Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Active This ?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Active it!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.href = link
+                      Swal.fire(
+                        'Activeted!',
+                        'Activeted.',
+                        'success'
+                      )
+                    }
+                  })
+
+
+    });
+
+  });
+
+</script>
+
+
+
 <script>
  @if(Session::has('message'))
  var type = "{{ Session::get('alert-type','info') }}"
@@ -158,11 +221,11 @@
 
     case 'error':
     toastr.error(" {{ Session::get('message') }} ");
-    break; 
+    break;
  }
- @endif 
+ @endif
 
- 
+
 </script>
     </body>
 

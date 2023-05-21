@@ -23,7 +23,7 @@ class BrandController extends Controller
 
     public function BrandStore(Request $request)
     {
-        
+
 
         $request->validate([
             'brand_name' => 'required',
@@ -34,7 +34,7 @@ class BrandController extends Controller
 
         ]);
 
-        
+
         $image = $request->file('brand_image');
         $name_gen = hexdec(uniqid()).".".$image->getClientOriginalExtension();
         Image::make($image)->resize(300,200)->save('upload/brand/'.$name_gen); //resize image using laravel intervation libray
@@ -71,8 +71,8 @@ class BrandController extends Controller
         if($request->file('brand_image'))
         {
 
-                
-            @unlink($old_img);
+
+            unlink($old_img);
             $image = $request->file('brand_image');
             $name_gen = hexdec(uniqid()).".".$image->getClientOriginalExtension();
             Image::make($image)->resize(300,200)->save('upload/brand/'.$name_gen); //resize image using laravel intervation libray
@@ -84,7 +84,7 @@ class BrandController extends Controller
                 'brand_image' => $save_url,
             ]);
 
-                
+
             $notification =  array (
 
                 'message' => 'Brand Updated Successfully',
@@ -94,13 +94,13 @@ class BrandController extends Controller
             return redirect()->route('all.brand')->with($notification);
 
         }else{
-            
+
             Brand::findOrFail($brand_id)->update([
                 'brand_name'=> $request->brand_name,
                 'brand_slug'=>strtolower(str_replace(' ' , '-' , $request->brand_name )),
             ]);
 
-                
+
             $notification =  array (
 
                 'message' => 'Brand Updated Successfully',

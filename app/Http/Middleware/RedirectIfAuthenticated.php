@@ -23,10 +23,10 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect($guard.'/dashboard');
+                return redirect('/dashboard'); // $guard.'/dashboard
             }
         }
- 
+
         return $next($request);
     }
 }

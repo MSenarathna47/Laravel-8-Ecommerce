@@ -18,11 +18,11 @@ class SubSubCategory extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class,'category_id' , 'id');    //make relationship to  get category name to the subcategory table 
+        return $this->belongsTo(Category::class,'category_id' , 'id');    //make relationship to  get category name to the subcategory table
     }
     public function subcategory()
     {
-        return $this->belongsTo(SubCategory::class,'subcategory_id' , 'id');    //make relationship to  get category name to the subcategory table 
+        return $this->belongsTo(SubCategory::class,'subcategory_id' , 'id');    //make relationship to  get category name to the subcategory table
     }
 
 }
