@@ -57,6 +57,18 @@ Home Easy Online Shop
                     @include('frontend.common.featured_product')
             <!-- ================================== FEATURED PRODUCTS : END =============== -->
 
+            <!-- ================================== FEATURED PRODUCTS ===================== -->
+            @include('frontend.common.skip1')
+            <!-- ================================== FEATURED PRODUCTS : END =============== -->
+
+             <!-- ================================== FEATURED PRODUCTS ===================== -->
+             @include('frontend.common.skip2')
+             <!-- ================================== FEATURED PRODUCTS : END =============== -->
+
+                <!-- ================================== FEATURED PRODUCTS ===================== -->
+                @include('frontend.common.skipbrand')
+                <!-- ================================== FEATURED PRODUCTS : END =============== -->
+
                 </div>
             <!-- ================================== CONTENT : END ========================= -->
       </div>  <!-- /.row -->

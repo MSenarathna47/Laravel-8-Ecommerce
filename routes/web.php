@@ -178,6 +178,12 @@ Route::prefix('slider')->group(function(){
 
 Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails']);
 
+// Frontend SubCategory wise Data
+Route::get('/subcategory/product/{subcat_id}/{slug}', [IndexController::class, 'SubCatWiseProduct']);
+
+
+
+
 
 
 
