@@ -8,7 +8,7 @@
 <meta name="author" content="">
 <meta name="keywords" content="MediaCenter, Template, eCommerce">
 <meta name="robots" content="all">
-<title>Flipmart</title>
+<title>@yield('title')</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
@@ -39,28 +39,28 @@
 
 <!-- ============================================== HEADER : END ============================================== -->
 @yield('content')
-<!-- /#top-banner-and-menu --> 
+<!-- /#top-banner-and-menu -->
 
 <!-- ============================================================= FOOTER ============================================================= -->
 @include('frontend.body.footer')
-<!-- ============================================================= FOOTER : END============================================================= --> 
+<!-- ============================================================= FOOTER : END============================================================= -->
 
-<!-- For demo purposes – can be removed on production --> 
+<!-- For demo purposes – can be removed on production -->
 
-<!-- For demo purposes – can be removed on production : End --> 
+<!-- For demo purposes – can be removed on production : End -->
 
-<!-- JavaScripts placed at the end of the document so the pages load faster --> 
-<script src="{{asset('frontend/assets/js/jquery-1.11.1.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/bootstrap.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/bootstrap-hover-dropdown.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/owl.carousel.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/echo.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/jquery.easing-1.3.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/bootstrap-slider.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/jquery.rateit.min.js') }}"></script> 
-<script type="text/javascript" src="{{asset('frontend/assets/js/lightbox.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/bootstrap-select.min.js') }}"></script> 
-<script src="{{asset('frontend/assets/js/wow.min.js') }}"></script> 
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+<script src="{{asset('frontend/assets/js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/bootstrap-hover-dropdown.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/echo.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/jquery.easing-1.3.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/bootstrap-slider.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/jquery.rateit.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('frontend/assets/js/lightbox.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/bootstrap-select.min.js') }}"></script>
+<script src="{{asset('frontend/assets/js/wow.min.js') }}"></script>
 <script src="{{asset('frontend/assets/js/scripts.js') }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -82,11 +82,11 @@
 
     case 'error':
     toastr.error(" {{ Session::get('message') }} ");
-    break; 
+    break;
  }
- @endif 
+ @endif
 
- 
+
 </script>
 </body>
 </html>

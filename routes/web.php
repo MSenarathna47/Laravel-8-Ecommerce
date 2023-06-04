@@ -80,7 +80,7 @@ Route::post('/user/password/update', [IndexController::class,'UserUpdateChangePa
 Route::middleware(['auth:admin'])->group(function(){
 
     Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
-        return view('admin.index');})->name('dashboard');
+        return view('admin.index');})->name('admin.dashboard');
 
     Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
     Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
@@ -88,6 +88,9 @@ Route::middleware(['auth:admin'])->group(function(){
     Route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
+
+
+});  // end Middleware admin
 
 
 // Admin All Brands Routes
@@ -168,8 +171,13 @@ Route::prefix('slider')->group(function(){
 
 
 
+// FrontEnd all Route
 
-});  // end Middleware admin
+
+//   frontend product details page url
+
+Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails']);
+
 
 
 

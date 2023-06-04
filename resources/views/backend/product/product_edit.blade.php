@@ -159,7 +159,7 @@
                                 <div class="col-md 6  mt-4">
                                     <label>Product Discount Price</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required="" name="discount_price"  value="{{$products->discount_price}}">
+                                        <input type="text" class="form-control" name="discount_price"  value="{{$products->discount_price}}">
                                     </div>
                                     @error('discount_price')
                                     <span class="text-danger">{{$message}}</span>
@@ -203,7 +203,7 @@
 											<label for="checkbox_2">Hot Deals  </label>
 										</fieldset>
 										<fieldset>
-											<input type="checkbox" id="checkbox_3" name="featured" value="y" {{$products->featured == 1 ? 'checked' : ' '}}>
+											<input type="checkbox" id="checkbox_3" name="featured" value="1" {{$products->featured == 1 ? 'checked' : ' '}}>
 											<label for="checkbox_3">Featured</label>
 										</fieldset>
 									    <div class="help-block">

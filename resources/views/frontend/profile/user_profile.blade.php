@@ -17,23 +17,23 @@
 
                     </ul>
             </div>  <!-- // end col md 2 -->
-            
-            
+
+
             <div class="col-md-2">
 
-            </div>  <!-- // end col md 2 -->        
+            </div>  <!-- // end col md 2 -->
 
             <div class="col-md-6">
                 <div class="card">
                     <div class="text-center">
                       <h3><span class="text-danger"> Hi...</span><strong>{{ Auth::user()->name}}</strong>
-                        Update Your Profile</h3>                
+                        Update Your Profile</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{route('user.profile.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            
+
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Name <span></span></label>
                                 <input  type="text" name="name" class="form-control unicase-form-control text-input"  value="{{$user->name}}" >
@@ -56,10 +56,10 @@
                         </form>
                     </div>
                 </div>
-            </div>  <!-- // end col md 2 -->    
-    
+            </div>  <!-- // end col md 2 -->
 
-        </div> <!-- // end row  -->    
+
+        </div> <!-- // end row  -->
     </div>
 </div>
 
