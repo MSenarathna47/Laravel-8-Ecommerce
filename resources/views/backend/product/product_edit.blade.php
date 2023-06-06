@@ -107,7 +107,7 @@
                                 <div class="col-md 6  mt-4">
                                     <label>Product Quantity</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="product_qty"  class="form-control" required="" value="{{$products->product_qty}}">
+                                        <input type="text" name="product_qty"  class="form-control"  value="{{$products->product_qty}}">
                                     </div>
                                     @error('product_qty')
                                     <span class="text-danger">{{$message}}</span>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Frontend\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
@@ -156,7 +157,6 @@ Route::prefix('Product')->group(function(){
 });
 
 // Admin Slider All Routes
-
 Route::prefix('slider')->group(function(){
 
     Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slider');
@@ -179,9 +179,19 @@ Route::prefix('slider')->group(function(){
 Route::get('/product/details/{id}/{slug}',[IndexController::class,'ProductDetails']);
 
 // Frontend SubCategory wise Data
+Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
+
+// Frontend SubCategory wise Data
 Route::get('/subcategory/product/{subcat_id}/{slug}', [IndexController::class, 'SubCatWiseProduct']);
 
+// Frontend Sub-SubCategory wise Data
+Route::get('/subsubcategory/product/{subsubcat_id}/{slug}', [IndexController::class, 'SubSubCatWiseProduct']);
 
+// Product View Modal with Ajax
+Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
+
+// Add to Cart Store Data
+Route::post('/cart/data/store/{id}', [CartController::class, 'AddToCart']);
 
 
 

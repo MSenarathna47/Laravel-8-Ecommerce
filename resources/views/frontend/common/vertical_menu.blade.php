@@ -23,7 +23,7 @@ $categories = App\Models\Category::orderBy('category_name','ASC')->get();
                             <a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug ) }}">
                                 <h2 class="title">{{ $subcategory->subcategory_name}}</h2>
                             </a>
-                            <!--   Get SubSubCategory Table Data -->
+                            <!--   Get SubSubCategory Table Data -->    
                             @php
                             $subsubcategories = App\Models\SubSubCategory::where('subcategory_id',$subcategory->id)->orderBy('subsubcategory_name','ASC')->get();
                             @endphp
