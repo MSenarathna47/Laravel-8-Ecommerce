@@ -79,6 +79,10 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('manage-division') }}">Ship Division</a></li>
+                        <li><a href="{{ route('manage-district') }}">Ship District</a></li>
+                        <li><a href="{{ route('manage-state') }}">Ship State</a></li>
+
+
 
                     </ul>
                 </li>
