@@ -151,7 +151,7 @@
 					<div class='col-sm-6 col-md-7 product-info-block'>
 						<div class="product-info">
 
-							<h1 class="name" id="pname">{{$product->product_name}}</h1>
+							<h1 class="name" id="pname" >{{$product->product_name}}</h1>
 
 							<div class="rating-reviews m-t-20">
 								<div class="row">
@@ -301,10 +301,11 @@
                                     <input type="hidden" id="product_id" value="{{$product->id}}" min="1">
 
 									<div class="col-sm-7">
-                                        <button type="submit" onclick="addTocart()" class="btn btn-primary" >
+                                        {{-- <button type="submit" onclick="addTocart()" class="btn btn-primary" >
                                             <i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART
 
-                                        </button>
+                                        </button> --}}
+                                        <button type="submit" class="btn btn-primary mb-2" onclick="addToCart()" >Add to Cart</button>
 
 
 									</div>
@@ -312,7 +313,7 @@
 
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
-
+{{--  --}}
 
 
 

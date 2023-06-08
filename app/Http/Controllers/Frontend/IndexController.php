@@ -15,11 +15,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 
 class IndexController extends Controller
 {
     public function index()
     {
+
+        // cart::destroy();
+                // $d = Cart::content();    dd($d);
+
+
+
         $products = Product::where('status',1)->orderBy('id','DESC')->get();
         $sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
         $featured  = Product::where('featured',1)->Where('status',1)->orderBy('id','DESC')->limit(6)->get();
@@ -170,12 +178,14 @@ class IndexController extends Controller
 
         // print_r($id);
 		$product = Product::with('category','brand')->findOrFail($id);
-        
+
 		$color = $product->product_color;
 		$product_color = explode(',', $color);
 
 		$size = $product->product_size;
 		$product_size = explode(',', $size);
+
+
 
 		return response()->json(array(
 			'product' => $product,
