@@ -18,22 +18,22 @@
                     </ul>
             </div>  <!-- // end col md 2 -->
             
-            
+
             <div class="col-md-2">
 
-            </div>  <!-- // end col md 2 -->        
+            </div>  <!-- // end col md 2 -->
 
             <div class="col-md-6">
                 <div class="card">
                     <div class="text-center">
                       <h3><span class="text-danger"> Hi...</span><strong>{{ Auth::user()->name}}</strong>
-                        Welcome To Easy Online Shop</h3>  
+                        Welcome To Easy Online Shop</h3>
                     </div>
                 </div>
-            </div>  <!-- // end col md 2 -->    
-    
+            </div>  <!-- // end col md 2 -->
 
-        </div> <!-- // end row  -->    
+
+        </div> <!-- // end row  -->
     </div>
 </div>
 

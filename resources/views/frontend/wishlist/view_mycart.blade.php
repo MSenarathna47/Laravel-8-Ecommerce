@@ -49,6 +49,7 @@ My Cart Page
 
 
 <div class="col-md-4 col-sm-12 estimate-ship-tax">
+
 	@if(Session::has('coupon'))
 
 	@else
@@ -86,22 +87,23 @@ My Cart Page
 
 
 <div class="col-md-4 col-sm-12 cart-shopping-total">
-	<table class="table">
-		<thead id="couponCalField">
+    <table class="table">
+        <thead id="couponCalField">
 
 		</thead><!-- /thead -->
 		<tbody>
 				<tr>
 					<td>
 						<div class="cart-checkout-btn pull-right">
-		 {{-- <a href="{{ route('checkout') }}" type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</a> --}}
+									 <a href="{{ route('checkout') }}" type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</a>
 
 						</div>
 					</td>
 				</tr>
 		</tbody><!-- /tbody -->
 	</table><!-- /table -->
-</div><!-- /.cart-shopping-total -->
+
+
 
 
 

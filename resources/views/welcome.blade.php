@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,4 +129,131 @@
             </div>
         </div>
     </body>
+</html> --}}
+
+
+
+@php
+
+    // $mark = 75;
+
+    // if($mark >= 75)
+
+    //      echo " PASS";
+    // else
+    //     echo "FAIL";
+
+
+
+
+    // $d =  date("y-m-d-l");
+
+    // echo $d;
+
+    // if($d == "friday")
+    //      echo "NICE WEEK END";
+
+    //         // $a = 5;
+    //         // echo $a;
+
+
+//     $t = date("H");
+
+// if ($t < "php") {
+//   echo "Have a good day!";
+// }
+
+
+
+// $favoriteColor = "red";
+
+// switch ($favoriteColor) {
+//     case "red":
+//         echo "Your favorite color is red";
+//         break;
+//     case "blue":
+//         echo "Your favorite color is blue";
+//         break;
+//     case "green":
+//         echo "Your favorite color is green";
+//         break;
+//     default:
+//         echo "Your favorite color is unknown";
+//         break;
+// }
+
+
+
+// $i = 1;
+
+// while ($i <= 10) {
+//     echo $i . "<br>";
+//     $i++;
+// }
+
+// do{
+//     echo $i . "<br>";
+//     $i++;
+// }while ($i <= 10)
+
+
+
+
+
+// for ($i = 1; $i <= 10; $i++) {
+//     echo $i . " ";
+// }
+
+
+echo "<table style='border: 1px solid black;'>";
+
+echo    "<tr>
+            <th style='border: 1px solid black;'>Number</th>
+            <th style='border: 1px solid black;'>Square</th>
+        </tr>";
+
+for ($i = 1; $i <= 10; $i++) {
+
+    $square = $i * $i;
+
+    echo "<tr>
+            <td style='border: 1px solid black;'>$i</td>
+            <td style='border: 1px solid black;'>$square</td>
+         </tr>";
+}
+
+echo "</table>";
+
+
+
+
+
+
+@endphp
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <table tyle='border: 1px solid black;'>
+        <tr>
+            <th style='border: 1px solid black;>Number</th>
+            <th style='border: 1px solid black;>Squre</th>
+        </tr>
+        <tr>
+        @php
+            for ($i = 1; $i <= 10; $i++) {
+
+            $square = $i * $i;
+
+            echo "<tr>
+                    <td style='border: 1px solid black;'>$i</td>
+                    <td style='border: 1px solid black;'>$square</td>
+                </tr>";
+            }
+        @endphp
+        </tr>
+    </table>
+</body>
 </html>

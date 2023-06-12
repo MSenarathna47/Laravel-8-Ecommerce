@@ -1,9 +1,9 @@
  @extends('admin.admin_master')
  @section('admin')
- 
+
  <div class="page-content">
     <div class="container-fluid">
-        
+
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
@@ -34,10 +34,10 @@
                             </div>
                             <div class="avatar-sm">
                                 <span class="avatar-title bg-light text-primary rounded-3">
-                                    <i class="ri-shopping-cart-2-line font-size-24"></i>  
+                                    <i class="ri-shopping-cart-2-line font-size-24"></i>
                                 </span>
                             </div>
-                        </div>                                            
+                        </div>
                     </div><!-- end cardbody -->
                 </div><!-- end card -->
             </div><!-- end col -->
@@ -52,10 +52,10 @@
                             </div>
                             <div class="avatar-sm">
                                 <span class="avatar-title bg-light text-success rounded-3">
-                                    <i class="mdi mdi-currency-usd font-size-24"></i>  
+                                    <i class="mdi mdi-currency-usd font-size-24"></i>
                                 </span>
                             </div>
-                        </div>                                              
+                        </div>
                     </div><!-- end cardbody -->
                 </div><!-- end card -->
             </div><!-- end col -->
@@ -70,10 +70,10 @@
                             </div>
                             <div class="avatar-sm">
                                 <span class="avatar-title bg-light text-primary rounded-3">
-                                    <i class="ri-user-3-line font-size-24"></i>  
+                                    <i class="ri-user-3-line font-size-24"></i>
                                 </span>
                             </div>
-                        </div>                                              
+                        </div>
                     </div><!-- end cardbody -->
                 </div><!-- end card -->
             </div><!-- end col -->
@@ -88,19 +88,19 @@
                             </div>
                             <div class="avatar-sm">
                                 <span class="avatar-title bg-light text-success rounded-3">
-                                    <i class="mdi mdi-currency-btc font-size-24"></i>  
+                                    <i class="mdi mdi-currency-btc font-size-24"></i>
                                 </span>
                             </div>
-                        </div>                                              
+                        </div>
                     </div><!-- end cardbody -->
                 </div><!-- end card -->
             </div><!-- end col -->
         </div><!-- end row -->
 
-      
+
 
         <div class="row">
-           
+
                 <div class="card">
                     <div class="card-body">
                         <div class="dropdown float-end">
@@ -244,13 +244,13 @@
                         </div>
                     </div><!-- end card -->
                 </div><!-- end card -->
-            
+
             <!-- end col -->
-          
+
         </div>
         <!-- end row -->
     </div>
-    
+
 </div>
 
 @endsection
