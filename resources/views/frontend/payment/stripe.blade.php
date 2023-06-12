@@ -121,8 +121,7 @@ Stripe Payment Page
 			<div class="panel-heading">
 		    	<h4 class="unicase-checkout-title">Select Payment Method</h4>
 		    </div>
-        {{-- {{ route('stripe.order') }}   --}}
-<form action="" method="post" id="payment-form">
+<form action="{{ route('stripe.order') }}" method="post" id="payment-form">
                             @csrf
         <div class="form-row">
             <label for="card-element">
@@ -184,7 +183,7 @@ Stripe Payment Page
 
  <script type="text/javascript">
     // Create a Stripe client.
-var stripe = Stripe('pk_test_51IUTWzALc6pn5BvMAUegqRHV0AAokjG7ZuV6RWcj5rxB9KCAwamgtWpw9T4maGAe34WmDkD6LSn1Yge3nzex6gYk004pILHsNh');
+var stripe = Stripe('pk_test_51NIAIpB87EoAU660CM9rX70yRndnblc3rr5zlalFQ2p2VYhb2YVF6hkkvbN0XerLNJS8b5QXoIeGP8FaMW9FWuXa00uMUV1qrC');
 // Create an instance of Elements.
 var elements = stripe.elements();
 // Custom styling can be passed to options when creating an Element.
