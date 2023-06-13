@@ -86,8 +86,24 @@
 
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-layout-3-line"></i>
+                        <span>Orders</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('pending-orders') }}">Pending</a></li>
+                        <li><a href="{{ route('confirmed-orders') }}">Confirmed Orders</a></li>
+                        <li><a href="{{ route('processing-orders') }}">Processing Orders</a></li>
+                        <li><a href="{{ route('picked-orders') }}">Picked Orders</a></li>
+                        <li><a href="{{ route('shipped-orders') }}"> Shipped Orders</a></li>
+                        <li><a href="{{ route('delivered-orders') }}">Delivered Orders</a></li>
+                        <li><a href="{{ route('cancel-orders') }}">Cancel Orders</a></li>
+                        {{-- <li><a href="{{ route('') }}"</a></li> --}}
+                    </ul>
+                </li>
 
-                <li class="menu-title">Pages</li>
+                {{-- <li class="menu-title">Pages</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -115,7 +131,7 @@
                         <li><a href="pages-404.html">Error 404</a></li>
                         <li><a href="pages-500.html">Error 500</a></li>
                     </ul>
-                </li>
+                </li> --}}
            </ul>
         </div>
         <!-- Sidebar -->

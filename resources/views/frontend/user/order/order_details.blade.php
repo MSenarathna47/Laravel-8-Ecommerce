@@ -240,6 +240,7 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 
       </div> <!-- // END ORDER ITEM ROW -->
 
+
       @if($order->status !== "delivered")
 
       @else
@@ -270,8 +271,7 @@ $file = App\Models\Product::where('id',$item->product_id)->first();
 
 
   @endif
-<br><br>
-
+  <br><br>
 
 
 

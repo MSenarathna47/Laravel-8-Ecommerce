@@ -29,8 +29,8 @@ class CreateProductsTable extends Migration
             $table->string('selling_price');
             $table->string('discount_price')->nullable();
             $table->string('short_descp');
-            $table->string('long_descp');
-            $table->string('product_thambnail');
+            $table->text('long_descp');
+            $table->text('product_thambnail');
             $table->integer('hot_deals')->nullable();
             $table->integer('featured')->nullable();
             $table->integer('special_offer')->nullable();
