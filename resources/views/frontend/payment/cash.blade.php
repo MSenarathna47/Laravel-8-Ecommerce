@@ -96,27 +96,34 @@ Cash On Delivery
 			<div class="panel-heading">
 		    	<h4 class="unicase-checkout-title">Select Payment Method</h4>
 		    </div>
-            <div class="row">
-		    	<div class="col-md-4">
-		   <label for="">Stripe</label>
-       <input type="radio" name="payment_method" value="stripe">
-       <img src="{{ asset('frontend/assets/images/payments/4.png') }}">
-		    	</div> <!-- end col md 4 -->
 
-		    	<div class="col-md-4">
-		    		<label for="">Card</label>
-       <input type="radio" name="payment_method" value="card">
-		<img src="{{ asset('frontend/assets/images/payments/3.png') }}">
-		    	</div> <!-- end col md 4 -->
+<form action="{{ route('cash.order') }}" method="post" id="payment-form">   
+                            @csrf
+        <div class="form-row">
 
-		    	<div class="col-md-4">
-		    		<label for="">Cash</label>
-       <input type="radio" name="payment_method" value="cash">
-		  <img src="{{ asset('frontend/assets/images/payments/6.png') }}">
-		    	</div> <!-- end col md 4 -->
+          <img src="{{ asset('frontend/assets/images/payments/cash.png') }}">
+
+            <label for="card-element">
+
+      <input type="hidden" name="name" value="{{ $data['shipping_name'] }}">
+      <input type="hidden" name="email" value="{{ $data['shipping_email'] }}">
+      <input type="hidden" name="phone" value="{{ $data['shipping_phone'] }}">
+      <input type="hidden" name="post_code" value="{{ $data['post_code'] }}">
+      <input type="hidden" name="division_id" value="{{ $data['division_id'] }}">
+      <input type="hidden" name="district_id" value="{{ $data['district_id'] }}">
+      <input type="hidden" name="state_id" value="{{ $data['state_id'] }}">
+      <input type="hidden" name="notes" value="{{ $data['notes'] }}">
+
+            </label>
 
 
-			</div> <!-- // end row  -->
+
+
+        </div>
+        <br>
+        <button class="btn btn-primary">Submit Payment</button>
+        </form>
+
 
 
 		</div>
@@ -146,6 +153,9 @@ Cash On Delivery
 <!-- ===== == BRANDS CAROUSEL : END === === -->
 </div><!-- /.container -->
 </div><!-- /.body-content -->
+
+
+
 
 
 

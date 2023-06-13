@@ -12,12 +12,16 @@
                         <br>
                         <a href="{{route('dashboard')}}" class="btb btn-primary btn-sm btn-block">Home</a>
                         <a href="{{route('user.profile')}}" class="btb btn-primary btn-sm btn-block">Profile Update</a>
+
                         <a href="{{route('change.password')}}" class="btb btn-primary btn-sm btn-block">Change Password</a>
+                        <a href="{{route('my.orders')}}" class="btb btn-primary btn-sm btn-block">Orders</a>
+                        <a href="{{ route('return.order.list') }}" class="btb btn-primary btn-sm btn-block">Return Orders</a>
+                        <a href="{{ route('cancel.orders') }}" class="btb btn-primary btn-sm btn-block">Cancel Orders</a>
                         <a href="{{route('user.logout')}}" class="btb btn-danger btn-sm btn-block">Logout</a>
 
                     </ul>
             </div>  <!-- // end col md 2 -->
-            
+
 
             <div class="col-md-2">
 
